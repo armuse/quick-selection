@@ -10,19 +10,14 @@ ptW=("150ptV")
 #ptW=("0_150ptV" "150ptV" )
 MJSample=("MJ_data" "MJ_ttbar" "MJ_Wjets" "MJ_singletop" "MJ_Zjets")
 
-#if condor is acting up, use lockfile + sleep
+#submit job for each configuration above
 
 for i in "${btag[@]}"; do
   for j in "${jtag[@]}"; do
     for k in "${ptW[@]}"; do
       for m in "${MJSample[@]}"; do
-#      condor_submit condor_submit.job sample=$m region=$i$j$k
-#      sleep 5
-#      for m in "${Sample[@]}"; do
-#      condor_submit condor_submit.job sample=$m region=$i$j$k
-#        sleep 5
-      echo $m $i$j$k
-     ./NtupleReader $m $i$j$k
+        condor_submit condor_submit.job sample=$m region=$i$j$k
+        sleep 5
       done
     done
   done
