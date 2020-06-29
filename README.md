@@ -1,2 +1,2 @@
 # quick-selection
-To run quick analysis selection and create inputs for data driven background modelling in C++ and BASH (from 2017)
+To run quick analysis selection and create inputs for data driven background modelling in C++, using BASH to compile and submit to distributed computing at university using condor (from 2017)
